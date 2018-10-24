@@ -41,6 +41,144 @@ class Node{
         this.right = null;
     }
 
-    
 
 }
+
+class TreeNode {
+
+    constructor(){
+        this.root = null;
+
+    }
+    //insert
+    insert(val){
+        let newNode = new Node(val);    //newNode
+        //this.root == null
+        if(this.root == null){
+            this.root = newNode; //newNode
+            return this; //return this;
+        }else{
+            let current =  this.root;
+            while(true){
+                if(val < current.val){
+                    if(current.left == null){
+                        current.left = new Node(val);
+                        return this;
+                    }else{
+                        current = current.left;
+                    }
+                }else{
+                    if(current.right == null){
+                        current.right = new Node(val);
+                        return this;
+                    }else{
+                        current = current.right;
+                    }
+                }
+            }
+        }
+    }
+
+    //Left Node at min Level
+    minLevel(root,level = 0){
+
+        this.minLevel
+
+
+    }
+
+
+}
+
+let treeNode = new TreeNode();
+treeNode.insert(1);
+treeNode.insert(2);
+treeNode.insert(3);
+treeNode.insert(4);
+treeNode.insert(5);
+treeNode.insert(7);
+treeNode.insert(2);
+treeNode.insert(8);
+
+
+console.log(treeNode);
+
+
+
+//find the combination of the array
+
+//[1,2,3]
+//
+
+//123
+//132
+//213
+//231
+//312
+//321
+
+function combination(array,n){
+
+    let result = [];
+
+    for(let i = 0; i <n;i++){
+
+        let number = array[i]; //
+        let subArray = array.splice(i,1); //remove element from the index
+
+       result.push(...helper(number,subArray,[]));
+    }
+
+   
+
+
+}
+
+//helper
+function helper(number,subArray,array){
+
+
+    if(subArray.length == 0){
+        return array;
+    }
+
+    //subArray
+    for(let  i = 0 ; i < subArray.length; i++){
+
+    }
+
+
+
+}
+
+
+function permutateWithoutRepetitions(permutationOptions) {
+    if (permutationOptions.length === 1) {
+      return [permutationOptions];
+    }
+    // Init permutations array.
+    const permutations = [];
+    // Get all permutations for permutationOptions excluding the first element.
+    const smallerPermutations = permutateWithoutRepetitions(permutationOptions.slice(1));
+  
+    // Insert first option into every possible position of every smaller permutation.
+    const firstOption = permutationOptions[0];
+  
+    for (let permIndex = 0; permIndex < smallerPermutations.length; permIndex += 1) {
+      const smallerPermutation = smallerPermutations[permIndex];
+      // Insert first option into every possible position of smallerPermutation.
+      for(let positionIndex = 0; positionIndex <= smallerPermutation.length; positionIndex += 1) {
+        const permutationPrefix = smallerPermutation.slice(0, positionIndex);   //permutationPrefix
+        const permutationSuffix = smallerPermutation.slice(positionIndex);      //permutationSuffix
+        permutations.push(permutationPrefix.concat([firstOption], permutationSuffix));//firstOption, permutationSuffix
+      }
+    }
+    return permutations;
+}
+
+
+
+
+  let permutationOptions = [1,2,3]
+  console.log(permutateWithoutRepetitions(permutationOptions));
+  //[ [ 1, 2, 3 ],[ 2, 1, 3 ],[ 2, 3, 1 ],[ 1, 3, 2 ],[ 3, 1, 2 ],[ 3, 2, 1 ] ]
