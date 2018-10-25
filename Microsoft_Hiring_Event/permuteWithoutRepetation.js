@@ -4,6 +4,9 @@
  */
 
 
+
+ //Step1: 
+
  //we need to get all permutation except the first Element 
 //Permutate Without Repetitions
 function permutateWithoutRepetitions(permutationOptions) {
@@ -13,14 +16,14 @@ function permutateWithoutRepetitions(permutationOptions) {
       return [permutationOptions]; //permutation Options
     }
   
-    //Init permutations array.
+    //Initialize permutations of array.
     const permutations = [];
   
     //Get all permutations for permutationOptions excluding the first element.
     const smallerPermutations = permutateWithoutRepetitions(permutationOptions.slice(1));
   
     //Insert first option into every possible position of every smaller permutation.
-    const firstOption = permutationOptions[0];
+    const firstOption = permutationOptions[0]; //permutationOptions[0]
     //console.log(firstOption);
   
     //parmIndex=0,smallerPermutations.length,permIndex++
@@ -38,7 +41,7 @@ function permutateWithoutRepetitions(permutationOptions) {
       }
     }
   
-    return permutations;
+    return permutations; //permutations
   }
 
 console.log(permutateWithoutRepetitions([1,2,3]));

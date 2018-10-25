@@ -12,12 +12,15 @@
 //Tree
 //Binary Tree
 //Binary Search Tree
+//(left && right) 
+//(value)
 class Node{
 
+    //constructor(value)
     constructor(value){
-        this.value  = value;
-        this.left   = null;
-        this.right  = null;
+        this.value  = value; //value
+        this.left   = null;  //left
+        this.right  = null;  //right
     }
 
 
@@ -26,6 +29,7 @@ class Node{
 
 //Binary Search Tree
 class BinarySearchTree{
+    
     //constructor
     constructor(){
         this.root = null;
@@ -33,7 +37,7 @@ class BinarySearchTree{
 
     //insert
     insert(val){
-        let newNode = new Node(val);
+        let newNode = new Node(val); //newNode 
         //this.root
         if(this.root == null){
             this.root = newNode;
@@ -59,10 +63,6 @@ class BinarySearchTree{
             }
         }
         }
-
-
-
-
     }
 
     find(){

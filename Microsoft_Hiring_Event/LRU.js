@@ -19,8 +19,8 @@ lru.prototype.lrunode = function(key,value){
 }
 //set Head
 lru.prototype.setHead    = function(node){
-    node.next  = this.head; //node.next
-    node.prev = null; //node.prev
+    node.next       = this.head; //node.next
+    node.prev       = null; //node.prev
     if(this.head!==null){
         this.head.prev = node; //this.head.prev
     }

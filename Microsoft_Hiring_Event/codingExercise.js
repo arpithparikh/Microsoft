@@ -67,8 +67,6 @@ class SinglyLinkedList{
         var currentHead = ths.head;
         this.head       = currentHead.next;
         return this;
-
-
     }
 
 
