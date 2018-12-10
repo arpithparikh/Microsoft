@@ -24,3 +24,18 @@ even.abc = 2; //interesting
 console.log(evenHead);
 
 
+//For example: 'OF MICE AND MEN' and 'MEN IN BLACK' join to form 'OF MICE AND MEN IN BLACK'. 
+
+//You could further join 'OF MICE AND MEN IN BLACK' with 'BLACK MASS' to form 'OF MICE AND MEN IN BLACK MASS'.   ----->Graph question
+
+ 
+
+"Washington And Paris"  "Man In Black" "Black Washington"
+
+"Man In Black Washington And Paris"
+
+                            washington  AND PARIS MAN 
+
+
+
+                            
